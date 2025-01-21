@@ -1,0 +1,14 @@
+<div class="container">
+    <div>
+        <h4 class="text-center">{{component_name}}</h4>
+    </div>
+    <div>
+        <form (ngSubmit)="onSubmit()">
+            <div class="fomr-group">
+                <label for="covcenter_name">Covid Center Name</label>
+                <input type="text" id="covcenter_name" class="form-control" name="covcenter_name" [(ngModel)]="covcenter.covcenter_name" placeholder="Enter covid center name"/>
+            </div>
+            <button type="submit" class="btn btn-success mt-3">Add Covid Center</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+    <div>
+        <h4 class="text-center"> View Covid Centers <br> 
+            <a routerLink="/addcovcenter" class="btn btn-primary m-2 ">Add Covid Center</a>
+        </h4>
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <th>Sr</th>
+            <th>Name</th>
+            <th>Edit</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let covcen of covcenlist; let i=index">
+                <td>{{i+1}} </td>
+                <td>{{covcen.covcenter_name}}</td>
+                <td> <button class="btn btn-success" (click)="getCovidCenterById(covcen.covcenter_id)">Update</button> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
