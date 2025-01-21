@@ -7,15 +7,15 @@
 
             <div class="form-group">
                 <label for="covcenter_name">Covid Center Name</label>
-                <select [(ngModel)]="covcendept.covcenter" id="covcenter" name="covcenter" >
+                <select [(ngModel)]="covcendept.covcenter" id="covcenter" name="covcenter" class="form-control" >
                     <option selected disabled > Please Select Center </option>
                     <option *ngFor="let covcenter of covcenlist" [ngValue]="covcenter">{{covcenter.covcenter_name}}</option>
                 </select>
             </div> 
 
-            <div class="fomr-group">
-                <label for="covcenter_name">Covid Center Name</label>
-                <input type="text" id="covcenter_name" class="form-control" name="covcenter_name" [(ngModel)]="covcendept.covcendept_name " placeholder="Enter Covid Center Department Name"/>
+            <div class="form-group">
+                <label for="covcendept_name">Covid Center Department</label>
+                <input type="text" id="covcendept_name" class="form-control" name="covcendept_name" [(ngModel)]="covcendept.covcendept_name " placeholder="Enter Covid Center Department Name"/>
             </div>
             <button type="submit" class="btn btn-success mt-3">Add Covid Center</button>
         </form>

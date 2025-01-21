@@ -9,7 +9,7 @@ import { CovCenDepartment } from '../../Models/CovCenDepartment';
 })
 export class CovcendepartmentService {
 
-   app_url = GlobalComponent.base_url+'covcen/'
+   app_url = GlobalComponent.base_url+'covcendept/'
   
     constructor(private http : HttpClient) { }
   

@@ -1,1 +1,23 @@
-<p>viewcovcendepartment works!</p>
+<div class="container">
+    <div>
+        <h4 class="text-center">View Covid Center Departments<br>
+            <a routerLink="/add/covidcenter/department" class="btn btn-success m-2" >Add Covid Center Department</a>
+        </h4>
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <th>Sr</th>
+            <th>Department</th>
+            <th>Center</th>
+            <th>EDIT</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let covcendept of covcendeptlist; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{covcendept.covcendept_name}}</td>
+                <td>{{covcendept.covcenter.covcenter_name}}</td>
+                <td><button class="btn btn-success" (click)="getCovCenDeptById(covcendept.covcendept_id)">UPDATE</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
