@@ -1,0 +1,23 @@
+<div class="container">
+    <div>
+        <h4 class="text-center"> view Beds <br>
+            <a routerLink="/add/covidcenter/bed" class="btn btn-primary mt-2">Add Bed</a>
+        </h4>
+    </div>
+    <table class="table table-hover table-striped">
+        <thead>
+            <th>Sr</th>
+            <th>Bed</th>
+            <th>Ward</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bed of covcenbedlist; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{bed.covcenbed_num}}</td>
+                <td>{{bed.covcenward.covcenward_num}}</td>
+                <td><button class="btn btn-success" (click)="getCovCenBedById(bed.covcenbed_id)">UPDATE</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

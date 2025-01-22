@@ -1,1 +1,12 @@
-<p>addcovcenwardtype works!</p>
+<div class="container">
+    <div>
+        <h4 class="text-center">{{component_name}} </h4>
+    </div>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="covcenward_type">Ward Type</label>
+            <input type="text" name="covcenward_type" id="covcenward_type" [(ngModel)]="covcenwardtype.covcenward_type" class="form-control" placeholder="Enter Ward type">
+        </div>
+        <button type="submit" class="btn btn-success mt-2" >Add Ward Type</button>
+    </form>
+</div>

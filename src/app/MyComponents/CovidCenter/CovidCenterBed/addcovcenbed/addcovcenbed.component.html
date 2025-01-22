@@ -1,0 +1,20 @@
+<div class="container">
+    <div>
+        <h4 class="text-center">{{component_name}}</h4>
+    </div>
+    <div>
+        <form method="post" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="covcenward">Ward</label>
+                <select name="covcenward" id="covcenward" class="form-control" [(ngModel)]="covcenbed.covcenward">
+                    <option selected disabled>Please Select Ward</option>
+                    <option  *ngFor="let ward of covcenwardlist" [ngValue]="ward">{{ward.covcenward_num}} ( {{ward.covcenwardtype.covcenward_type}} ) </option>
+                </select> 
+            </div>
+            <div class="form-group"><label for="covcenbed_num">Bed Number</label>
+                <input type="text" name="covcenbed_num" id="covcenbed_num" [(ngModel)]="covcenbed.covcenbed_num" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success mt-2">Add Bed</button>
+        </form>
+    </div>
+</div>

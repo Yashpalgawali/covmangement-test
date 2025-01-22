@@ -1,0 +1,28 @@
+<div class="container">
+    <h4 class="text-center">{{component_name}}</h4>
+    <form (ngSubmit)="onSubmit()" >
+
+        <div class="form-group">
+            <label for="covcenwardtype">Ward Type</label>
+            <select name="covcenwardtype" id="covcenwardtype" class="form-control" [(ngModel)]="covcenward.covcenwardtype">
+                <option selected disabled>Please Select Ward type</option>
+                <option *ngFor="let wardtype of covcenwardtypelist"  [ngValue]="wardtype"> {{wardtype.covcenward_type}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="covcenward_num">Department</label>
+            <select name="covcendept" id="covcendept" class="form-control" [(ngModel)]="covcenward.covcendept">
+                <option selected disabled>Please Select Department</option>
+                <option *ngFor="let covcendept of covcendeptlist"  [ngValue]="covcendept"> {{covcendept.covcendept_name}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="covcenward_num">Ward Number</label>
+            <input type="text" name="covcenward_num" id="covcenward_num"  class="form-control" [(ngModel)]="covcenward.covcenward_num" placeholder="Enter Ward Number">
+        </div>
+      
+        <button type="submit" class="btn btn-success mt-2">Add  Ward</button>
+    </form>
+</div>

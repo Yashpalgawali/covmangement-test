@@ -1,1 +1,21 @@
-<p>viewcovcenwardtype works!</p>
+<div class="container">
+    <h4 class="text-center mt-2"> View Ward Types <br> <a routerLink="/add/covidcenter/wardtype" class="btn btn-primary mt-3" >Add Ward Type</a> </h4>
+    <div>
+        <h4  class="alert alert-success" *ngIf="response">{{response}}</h4>
+        <h4  class="alert alert-danger" *ngIf="reserr">{{reserr}}</h4>
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <th>Sr</th>
+            <th>Type</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let wardtype of covncewardtypelist; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{wardtype.covcenward_type}}</td>
+                <td><button class="btn btn-success" (click)="getWardTypeById(wardtype.covcenwardtype_id)">UPDATE</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
