@@ -1,0 +1,28 @@
+<div class="container">
+    <h4 class="text-center">
+        View Covid Center Doctor
+        <br><a routerLink="/add/covidcenter/doctor"  class="btn btn-primary m-3">Add Doctor</a>
+    </h4>
+
+    <div>
+        <h4 class="alert alert-success" *ngIf="response">{{response}}</h4>
+        <h4 class="alert alert-danger" *ngIf="reserr">{{reserr}}</h4>
+    </div>
+
+    <table class="table table-hover table-striped">
+        <thead>
+            <th>Sr</th>
+            <th>Doctor Name</th>
+            <th>Department</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let doctor of covcendoclist; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{doctor.covcendoc_name}}</td>
+                <td>{{doctor.covcendepartment.covcendept_name}}</td>
+                <td><button type="submit" class="btn btn-success" (click)="getCovCenDocByDocId(doctor.covcendoc_id)">UPDATE</button> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

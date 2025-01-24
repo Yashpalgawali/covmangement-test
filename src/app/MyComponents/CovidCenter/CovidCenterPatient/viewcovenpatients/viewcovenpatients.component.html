@@ -1,0 +1,30 @@
+<div class="container">
+    <div>
+        <h5 class="text-center">View patients<br>
+            <a routerLink="/add/covcenter/patient" class="btn btn-primary">Add Patient</a></h5>
+    </div>
+    <div>
+        <h4 class="alert alert-success" *ngIf="response">{{response}}</h4>
+        <h4 class="alert alert-danger" *ngIf="reserr" >{{reserr}}</h4>
+    </div>
+    <table class="table table-hover table-striped">
+        <thead>
+            <th>Sr</th>
+            <th>Name</th>
+            <th>Doctor</th>
+            <th>Ward</th>
+            <th>Bed</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pat of covcenpatientlist; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{pat.covcenpatient_name}}</td>
+                <td>{{pat.covcenpatientdoctor.covcendoc_name}}</td>
+                <td>{{pat.covcenpatientbed.covcenward.covcenward_num}}</td>
+                <td>{{pat.covcenpatientbed.covcenbed_num}}</td>
+                <td><button class="btn btn-success" (click)="getPatientByPatientId(pat.covcenpatient_id)">UPDATE</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

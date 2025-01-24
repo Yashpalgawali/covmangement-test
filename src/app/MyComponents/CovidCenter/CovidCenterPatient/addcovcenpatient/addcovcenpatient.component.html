@@ -1,0 +1,31 @@
+<div class="container">
+    <div>
+        <h4 class="text-center">{{component_name}}</h4>
+    </div>
+
+    <form  (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="covcenpatient_name">Patient Name</label>
+            <input type="text" name="covcenpatient_name" id="covcenpatient_name" class="form-control" [(ngModel)]="covcenpat.covcenpatient_name" placeholder="Enter Patient Name">
+        </div>
+
+        <div class="form-group">
+            <label for="covcenpatient_name">Doctor Name</label>
+
+            <select name="covcenpatientdoctor" id="covcenpatientdoctor" [(ngModel)]="covcenpat.covcenpatientdoctor" (change)="getBedsByDoctorId(covcenpat.covcenpatientdoctor.covcendoc_id)" class="form-control">
+                <option selected disabled>Please select Doctor</option>
+                <option  *ngFor="let doc of covcendoclist" [ngValue]="doc" >{{doc.covcendoc_name}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="covcenpatient_name">Doctor Name</label>
+
+            <select name="covcenpatientdoctor" id="covcenpatientdoctor" [(ngModel)]="covcenpat.covcenpatientdoctor" class="form-control">
+                <option selected disabled>Please select Doctor</option>
+                <option  *ngFor="let doc of covcendoclist" [ngValue]="doc" >{{doc.covcendoc_name}}</option>
+            </select>
+        </div>
+        <button class="btn btn-success mt-2" >Add Patient</button>
+    </form>
+</div>

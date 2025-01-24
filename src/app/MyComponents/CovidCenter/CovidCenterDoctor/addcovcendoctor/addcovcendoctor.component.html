@@ -1,1 +1,23 @@
-<p>addcovcendoctor works!</p>
+<div class="container">
+    <div>
+        <h4 class="text-center">{{component_name}}</h4>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" method="post">
+
+        <div class="form-group">
+            <label for="covcendepartment">Department</label>
+            <select class="form-control" id="covcendepartment" [(ngModel)]="covcendoc.covcendepartment" name="covcendepartment">
+                <option selected disabled>Select Department</option>
+                <option *ngFor="let dept of covcendeptlist" [ngValue]="dept">{{dept.covcendept_name}}</option>
+            </select>
+        </div>
+ 
+        <div class="form-group">
+            <label for="covcendoc_name">Doctor Name</label>
+            <input type="text" name="covcendoc_name" placeholder="Enter Doctor Name" id="covcendoc_name" [(ngModel)]="covcendoc.covcendoc_name" class="form-control" required>
+
+        </div>
+        <button type="submit" class="btn btn-success mt-2">Add Doctor</button>
+    </form>
+</div>

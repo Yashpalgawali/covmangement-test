@@ -9,6 +9,10 @@ import { AddcovidcenwardComponent } from './MyComponents/CovidCenter/CovidWard/a
 import { ViewcovidcenwardsComponent } from './MyComponents/CovidCenter/CovidWard/viewcovidcenwards/viewcovidcenwards.component';
 import { AddcovcenbedComponent } from './MyComponents/CovidCenter/CovidCenterBed/addcovcenbed/addcovcenbed.component';
 import { ViewcovcenbedsComponent } from './MyComponents/CovidCenter/CovidCenterBed/viewcovcenbeds/viewcovcenbeds.component';
+import { AddcovcendoctorComponent } from './MyComponents/CovidCenter/CovidCenterDoctor/addcovcendoctor/addcovcendoctor.component';
+import { ViewcovcendoctorsComponent } from './MyComponents/CovidCenter/CovidCenterDoctor/viewcovcendoctors/viewcovcendoctors.component';
+import { AddcovcenpatientComponent } from './MyComponents/CovidCenter/CovidCenterPatient/addcovcenpatient/addcovcenpatient.component';
+import { ViewcovenpatientsComponent } from './MyComponents/CovidCenter/CovidCenterPatient/viewcovenpatients/viewcovenpatients.component';
 
 export const routes: Routes = [
     { path : "addcovcenter" , component: AddcovidcenterComponent },
@@ -29,5 +33,15 @@ export const routes: Routes = [
 
     { path : "add/covidcenter/bed" , component: AddcovcenbedComponent },
     { path : "covidcenter/bed" , component: ViewcovcenbedsComponent },
-    { path : "edit/covcenter/bed/:bedid" , component: AddcovcenbedComponent }
+    { path : "edit/covcenter/bed/:bedid" , component: AddcovcenbedComponent },
+
+    { path : "add/covidcenter/doctor" , component: AddcovcendoctorComponent },
+    { path : "covidcenter/doctor" , component: ViewcovcendoctorsComponent },
+    { path : "edit/covcenter/doctor/:doc_id" , component: AddcovcendoctorComponent },
+
+    { path : "add/covcenter/patient" , component: AddcovcenpatientComponent },
+    { path : "covidcenter/patients" , component: ViewcovenpatientsComponent },
+    { path : "edit/covcenter/patient/:pat_id" , component: AddcovcenpatientComponent }
+
+
 ];

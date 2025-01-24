@@ -33,12 +33,16 @@ export class AddcovcendoctorComponent implements OnInit {
 
       this.covcendocserv.getCovCenDoctorById(this.doc_id).subscribe({
         next : (data)=> {
-          this.covcendoc =data
-          
+          this.covcendoc = data
         }
       })
     }
-   
+    this.covcendeptserv.getAllCovidCenterDepartments().subscribe({
+      next : (data) => {
+        this.covcendeptlist = data
+         
+      },
+    })
   }
 
   onSubmit()
